@@ -10,7 +10,6 @@ body {
     line-height: 1.8; /* Set line spacing for better readability */
     color: #333333;
     text-decoration: none;
-   
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -31,6 +30,9 @@ p {
     text-decoration: none;
 }
 
+
+
+/* NAVBAR */
 .navbar{ 
     height: 60px;
     width: 100%;
@@ -63,33 +65,96 @@ p {
     background-color:transparent;
     border-radius: 5px;
     border: 2px solid;
-    border-color: rgb(55, 217, 144);
+    border-color: #69b3a2;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 17px;
-    font-family: 'Roboto', sans-serif;
-   
-    
+    font-family: 'Roboto', sans-serif;      
 }
 .resume a{
     text-decoration: none;
-    color: rgb(55, 217, 144);
+    color: #69b3a2;
+}
+.resume:hover{
+    background-color:#69b3a2 ;
+    color: #fff;
+}
+.resume a:hover{
+    color: #fff;
+}
+.sticky-right {
+    position: fixed;
+    top: 85%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.01s ease;
 }
 
-
-
-#particleCanvas {
-    position: absolute;
-    color: #cfcece;
-    
-    top: 60px; /* Match the navbar height */
-    left: 0;
-    width: 100%;
-    height: 600px; /* Height of the particle effect area */
-    z-index: 0; /* Ensure it stays behind other elements */
-    pointer-events: none; /* Prevent it from blocking clicks */
+.sticky-right a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #69b3a2;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s;
 }
+
+.sticky-right a:hover {
+    background-color: #555;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 100px;
+    background-color: #333;
+}
+
+/* Left Sidebar */
+.sticky-left {
+    position: fixed;
+    bottom: 15%;
+    left: -50px;
+    transform: translateY(50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.sticky-left span  {
+    font-size: 16px;
+    color: #333;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+}
+
+.sticky-left span a {
+
+    text-decoration: none;
+    color: black;
+}
+  .horizontal-line1 {
+    width: 2px;
+    height: 70px;
+    background-color: #333;
+}
+  
+
 
 .home {
     width: 100%;
@@ -111,7 +176,7 @@ p {
 }
 
 .hd1 h2 {
-    font-size: 2rem; /* Adjust font size */
+    font-size: 3rem; /* Adjust font size */
     margin: 0;
     padding-left: 25px;
 }
@@ -155,32 +220,27 @@ p {
     background-color:transparent;
     border-radius: 5px;
     border: 3px solid;
-    border-color: rgb(55, 217, 144);
-    color: rgb(55, 217, 144) ;
+    border-color: #69b3a2;
+    color: #69b3a2;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .hd3 .button1:hover{
-    background-color: rgb(55, 217, 144) ;/* Change button color on hover */
+    background-color: #69b3a2;/* Change button color on hover */
     color: #f9f9f9;
 }
 
 .icon-down{
     font-size: 4.5rem;
     text-decoration: none;
-    color: rgb(95, 236, 179);
+    color: #69b3a2;
     position: relative; /* Ensures it's positioned relative to its parent */
-    top: 145px;
+    top: 109px;
     
     
 }
-
-
-
-
-
 
 
 .intro {
@@ -191,7 +251,6 @@ p {
     justify-content: space-between; 
     gap: 20px; 
     padding: 20px; 
-    background-color: #f9f9f9;
 }
 
 .intro-wrapper1 {
@@ -242,15 +301,15 @@ p {
     border-radius: 5px;
     text-decoration: none;
     border: 3px solid;
-    border-color: rgb(55, 217, 144);
-    color: rgb(55, 217, 144) ;
+    border-color: #69b3a2;
+    color: #69b3a2 ;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .id3 .ibutton1:hover, .id3 .ibutton2:hover, .id3 .ibutton3:hover {
-    background-color: rgb(55, 217, 144) ;
+    background-color: #69b3a2 ;
     color: #f9f9f9;
     text-decoration: none;
     
@@ -302,24 +361,63 @@ p {
 }
 
 .sd3 .sd31 .icon-talking, .sd3 .sd32 .icon-consulting, .sd3 .sd33 .icon-teaching{
-    font-size: 45px;
+    font-size: 60px;
     margin-top: 20px;
-    color:rgb(55, 217, 144) ;
+    color: #69b3a2 ;
     padding: 20px;
     border-radius: 100%;
     border: 3px solid;
-    border-color: rgb(55, 217, 144);
-    color: rgb(55, 217, 144) ;
+    border-color: #69b3a2;
+    color: #69b3a2 ;
 
 }
 
 .sd3 .sd31 .sd31-exp, .sd3 .sd32 .sd32-exp, .sd3 .sd33 .sd33-exp{
     text-decoration: none;
-    color:rgb(55, 217, 144) ;
+    color: #69b3a2 ;
     font-size: 25px;
 }
 
+ /* Popup overlay styles */
+ .popup-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
 
+  /* Popup content styles */
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+    position: relative;
+  }
+
+  /* Close button styles */
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .popup-close:hover {
+    color: #f00;
+  }
 
 
 
@@ -331,7 +429,7 @@ p {
     align-items: center;
     width: 100%;
     height: 100hv;
-    background-color: rgb(249, 249, 249);
+
 }
 .portfolio-wrapper{
     text-align: center; 
@@ -382,7 +480,7 @@ p {
 
 .pd4 {
     margin-top: 20px;
-    padding: ;
+    padding: 0PX;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -521,16 +619,21 @@ p {
   
   .btn {
     padding: 10px 20px;
-    color: #fff;
-    background-color: #007bff;
-    text-decoration: none;
+    background-color:transparent;
     border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    border: 3px solid;
+    border-color: #69b3a2;
+    color: #69b3a2 ;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
   
   .btn:hover {
-    background-color: #0056b3;
+    background-color: #69b3a2 ;
+    color: #f9f9f9;
+    text-decoration: none;
   }
   
   /* Map and Footer Adjustments */

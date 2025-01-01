@@ -15,16 +15,18 @@
 
 </head>
 <body>
- 
+
+
+<!-- Nav bar-->
 <div class="navbar">
 <ul>
     <li class="linkcont">
-        <a href="">HOME</a>
-        <a href="">INTRO</a>
-        <a href="">SERVICES</a>
-        <a href="">PORTFOLIO</a>
-        <a href="">CULB ROLES</a>
-        <a href="">CONTACT</a>
+        <a href="#home#">HOME</a>
+        <a href="#intro#">INTRO</a>
+        <a href="#services#">SERVICES</a>
+        <a href="#portfolio#">PORTFOLIO</a>
+        <a href="#clubroles#">CULB ROLES</a>
+        <a href="#contact#">CONTACT</a>
     </li>
 </ul>
 <li class="resume">
@@ -33,93 +35,29 @@
 </div>
 
 
-<canvas id="particleCanvas"></canvas>
-<script>
-  const canvas = document.getElementById('particleCanvas');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = 300; // Match the CSS height
-  
-  const particles = [];
-  const mouse = { x: null, y: null };
-  
-  class Particle {
-      constructor(x, y, size) {
-          this.x = x;
-          this.y = y;
-          this.size = size;
-          this.dx = (Math.random() - 0.5) * 1.1;
-          this.dy = (Math.random() - 0.5) * 1.1;
-      }
-  
-      draw() {
-       ctx.beginPath();
-       ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2, false); // Fixed radius
-       ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; // Particle color
-       ctx.fill();
-     }
+<!-- Right Sidebar -->
+<div class="sticky-right">
+    <a href="https://www.instagram.com" target="_blank" class="icon instagram">
+      <i class="fab fa-instagram"></i> <!-- Instagram -->
+    </a>
+    <a href="https://github.com/Prakash-kanikella" target="_blank" class="icon github">
+      <i class="fab fa-github"></i> <!-- GitHub -->
+    </a>
+    <a href="https://www.linkedin.com/in/prakash-kanikella" target="_blank" class="icon linkedin">
+      <i class="fab fa-linkedin"></i> <!-- LinkedIn -->
+    </a>
+    <div class="vertical-line"></div>
+</div>
 
-  
-      update() {
-    if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
-    if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
 
-    this.x += this.dx;
-    this.y += this.dy;
-
-    // Draw connections to other particles
-    for (let i = 0; i < particles.length; i++) {
-        const dx = particles[i].x - this.x;
-        const dy = particles[i].y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 100) { // Reduce the threshold distance for connections
-            ctx.beginPath();
-            ctx.moveTo(this.x, this.y);
-            ctx.lineTo(particles[i].x, particles[i].y);
-            ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
-            ctx.lineWidth = 0.2;
-            ctx.stroke();
-        }
-    }
-}
-  }
+<!-- Left Sidebar -->
+<div class="sticky-left">
+    <span><a href="mailto:prakashkanikella7@gmail.com" class="bt">Prakashkanikella7@gmail.com</a></span>
+    <div class="horizontal-line1"></div>
+</div>
   
-  function init() {
-      const particleCount = 55; // Adjust for more or fewer particles
-      for (let i = 0; i < particleCount; i++) {
-          const x = Math.random() * canvas.width;
-          const y = Math.random() * canvas.height;
-          const size = Math.random() * 3 + 1; // Particle size
-          particles.push(new Particle(x, y, size));
-      }
-  }
-  
-  function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-          p.update();
-          p.draw();
-      });
-      requestAnimationFrame(animate);
-  }
-  
-  canvas.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-  });
-  
-  window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = 300;
-  });
-  
-  init();
-  animate();
-  </script>
-  
-
-<div class="home">
+<!-- Home -->
+<div id="home#" class="home">
     <div class="content-wrapper">
         <div class="hd1">
             <h2>
@@ -137,11 +75,18 @@
                 <i class="fab fa-linkedin"></i>
             </a>
         </div>
+        
+        <div class="dynamic-container">
+            <span id="static-text">I am a</span>
+            <span id="dynamictext"></span>
+          </div>
+
+          
         <div class="hd2">
             <h4>
-                👋 Hi! I'm a chemical engineering student at NIT Calicut with expertise in Python, data science, and <br>
+                Hi! I'm a chemical engineering student at NIT Calicut with expertise in Python, data science, and <br>
                  front-end development. I've gained hands-on experience through internships and industrial training, and <br>
-                 I enjoy leading projects and mentoring teams. Always excited to share knowledge and learn! 🚀
+                 I enjoy leading projects and mentoring teams. Always excited to share knowledge and learn!
             </h4>
         </div>
         <div class="hd3">
@@ -150,7 +95,7 @@
                 
             </ul>
         </div>
-        <div>
+        <div herf="" >
             <a href="" target="_blank" class="icon-down">
                 ﹀
             </a>
@@ -158,7 +103,9 @@
     </div>
 </div>
 
-<div class="intro">
+
+<!--Intro-->
+<div id="intro#" class="intro">
     <div class="intro-wrapper1">
         <div class="id1">
             <img src="media\1728106735737.jpeg" alt="DP">
@@ -202,7 +149,9 @@
 
 </div>
 
-<div class="services">
+
+<!-- Services -->
+<div id="services#" class="services">
 
     <div class="services-wrapper">
         <div class="sd1">
@@ -215,23 +164,25 @@
         <div class="sd3">
             <div class="sd31">
                 <a href="" target="_blank" class="icon-talking">
-                    <i class="fa-solid fa-microchip"></i>
+                    <i class="fa fa-users services-logo"></i>
                 </a>
-                <h3>talking</h3>
-                <h4>Hire me to talk about programming or data <br>
-                    visualization. I ❤️ it!</h4> 
-                <a href="" class="sd31-exp">
+                <h3>Talking</h3>
+                <h4>I love sharing insights on programming <br> and data visualization through engaging,<br>
+                     inspiring talks.</h4> 
+                <a href="" class="sd31-exp" id="openPopup1">
                     +
                 </a>
             </div>
             <div class="sd32">
                 <a href="" target="_blank" class="icon-consulting">
-                    <i class="fa-solid fa-earth-asia"></i>
+                    <i class="fa fa-users services-logo"></i>
                 </a>
-                <h3>consulting</h3>
-                <h4>Hire me to talk about programming or data <br>
-                    visualization. I ❤️ it!</h4> 
-                <a href="" class="sd32-exp">
+                <h3>Consulting</h3>
+                <h4>From interactive graphs to beautiful reports,<br> I help transform your data into <br>
+                     impactful solutions.
+
+                </h4> 
+                <a href="" class="sd32-exp" id="openPopup2">
                     +
                 </a>
             </div>
@@ -239,10 +190,10 @@
                 <a href="" target="_blank" class="icon-teaching">
                     <i class="fa-solid fa-chalkboard-user"></i>
                 </a>
-                <h3>teaching & training</h3>
-                <h4>Hire me to talk about programming or data <br>
-                    visualization. I ❤️ it!</h4> 
-                <a href="" class="sd33-exp">
+                <h3>Teaching & Training</h3>
+                <h4>Whether it’s a talk or a workshop, I’m here to <br> help you master data analytics <br>
+                     and visualization.</h4> 
+                <a href="" class="sd33-exp" id="openPopup3">
                     +
                 </a>
             </div>
@@ -252,13 +203,9 @@
 </div>
 
 
-<style>
-    
-   
-  </style>
-</head>
-<body>
-  <div class="portfolio">
+
+<!-- Portfolio -->
+<div id="portfolio#" class="portfolio">
     <div class="portfolio-wrapper">
       <div class="pd1">
         <h2>PORTFOLIO</h2>
@@ -283,32 +230,11 @@
         <img class="pdimg3" src="media\professionals-analyzing-financial-data-tablet-marketing-strategy-high-quality-presentation_937679-39939.webp" alt="Deep Learning">
       </div>
     </div>
-  </div>
+</div>
 
-  <script>
-    // JavaScript to handle filtering
-    const buttons = document.querySelectorAll(".pbutton");
-    const images = document.querySelectorAll(".pd4 img");
-
-    buttons.forEach(button => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-
-        images.forEach(img => {
-          if (filter === "all" || img.classList.contains(filter)) {
-            img.classList.add("active");
-          } else {
-            img.classList.remove("active");
-          }
-        });
-      });
-    });
-
-    // Initially show all images
-    document.querySelector('.pbutton[data-filter="all"]').click();
-  </script>
-  
-<div class="testimonial-slider">
+ 
+<!-- Clubroles -->
+<div id="clubroles#" class="testimonial-slider">
     <div class="testimonial">
       <div class="profile-pic">
         <img src="media\ian-dooley-DuBNA1QMpPA-unsplash.jpg" alt="Profile Picture">
@@ -329,7 +255,8 @@
   </div>
 
 
-  <section class="contact-section">
+<!-- Contact -->
+  <section id="contact#" class="contact-section">
     <div class="contact-wrapper">
         <div class="cd1">
             <h1 >Contact Us</h1>
@@ -365,6 +292,8 @@
     </div>
   </section>
   
+
+<!-- Footer -->  
 <footer>
     <div class="footer">
         <p>&copy; Copyright © Prakash Kanikella 2024</p>
@@ -380,6 +309,17 @@
     </div>
     </div>
 </footer>
+
+
+
+
+
+<!-- Script Tags -->
+<script src="js/pbutton.js"></script>
+<script src="js/openpopup.js"></script>
+<script src="js/pbutton.js"></script>
+<script src="js/dynamictext.js"></script>
+<script src="js/stckyelements.js"></script>
 <script src="script.js" defer></script>
 </body>
 </html>

@@ -44,3 +44,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const marker = L.marker([11.3218, 75.9342]).addTo(map);
   marker.bindPopup("<b>NIT Calicut</b><br>National Institute of Technology Calicut.").openPopup();
 });
+
+
