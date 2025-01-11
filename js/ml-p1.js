@@ -8,37 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="popup-content">
           <span class="popup-close" id="closePopup">&times;</span>
           <div class="logo-container">
-            <i class="fa fa-chart-line services-logo"></i>
-            <h2>Data Analysis</h2>
+            <i class="fa fa-cogs services-logo"></i>
+            <h2>Predictive Maintenance for Chemical Plant Equipment</h2>
           </div>
-          <p class="intro-text">
-            With a strong background in data analysis and a keen interest in transforming raw data into actionable insights, I offer services to help you make data-driven decisions, optimize processes, and drive business success.
-          </p>
-
-          <h3>I can help you if</h3>
-          <ul class="help-list">
-            <li>You need insights from complex datasets and want to turn data into clear, actionable recommendations.</li>
-            <li>You're looking to optimize processes using statistical analysis and data modeling techniques.</li>
-            <li>You want to explore trends, patterns, and relationships in your data that can help make better business decisions.</li>
-            <li>You require assistance with visualizing data and creating intuitive, informative reports.</li>
+          
+          <h3 class="left-subheading">Description</h3>
+          <ul class="project-description">
+            <li>Developed a robust machine learning model to forecast equipment failures using operational and sensor data.</li>
+            <li>Optimized maintenance schedules, reducing unplanned downtime and operational costs.</li>
+            <li>Provided actionable insights for improving equipment reliability and efficiency.</li>
           </ul>
-
-          <h3>Examples:</h3>
-          <ul class="examples-list">
-            <li>Predictive Maintenance for Chemical Plant Equipment - Link
-              <ul>
-                <li>Developed a machine learning model to predict equipment failure using operational and sensor data, optimizing maintenance schedules and reducing downtime.</li>
-              </ul>
-            </li>
-            <li>Process Optimization Using Data-Driven Models - Link
-              <ul>
-                <li>Built a machine learning model to analyze and optimize chemical process parameters, enhancing efficiency, yield, and operational cost-effectiveness.</li>
-              </ul>
-            </li>
+          
+          <h3>Links</h3>
+          <ul class="project-links">
+            <li><a href="https://github.com/Prakash-kanikella/Predictive-Maintenance-for-Chemical-Plant-Equipment" target="_blank">GitHub Repository</a></li>
           </ul>
 
           <h3>Contact Me</h3>
-          <p>Tell me more about your project at <a href="mailto:prakashkanikella7@gmail.com">prakashkanikella7@gmail.com</a> to explore how I can assist you.</p>
+          <p>Have an exciting project or idea? Let’s collaborate! Reach out to me at <a href="mailto:prakashkanikella7@gmail.com">prakashkanikella7@gmail.com</a>, and let’s bring your vision to life.</p>
 
           <ul class="contact-buttons">
             <li><a class="button1" href="https://www.linkedin.com/in/prakash-kanikellaa">LinkedIn</a></li>
