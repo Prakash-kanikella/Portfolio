@@ -35,7 +35,7 @@ p {
 /* NAVBAR */
 .navbar{ 
     height: 60px;
-    width: 100%;
+    width: 99%;
     background-color:rgb(255, 255, 255);
     display: flex;
     align-items: center;
@@ -535,6 +535,8 @@ p {
     color: #69b3a2 ;
 
 }
+
+
 
 .sd3 .sd31 .sd31-exp, .sd3 .sd32 .sd32-exp, .sd3 .sd33 .sd33-exp{
     text-decoration: none;
