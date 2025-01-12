@@ -10,6 +10,7 @@ body {
     line-height: 1.8; /* Set line spacing for better readability */
     color: #000000;
     text-decoration: none;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -327,7 +328,7 @@ p {
 
 
 .container {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0px auto;
     border-radius: 10px;
 
