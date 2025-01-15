@@ -329,14 +329,14 @@ p {
 
 .container {
     max-width: 100%;
-    margin: 0px auto;
+    margin: 0px 367px;
     border-radius: 10px;
 
   }
 
  .wph1 h1 {
   font-size: 2.2rem;
-  padding-left: 240px;
+  padding-left: 200px;
   margin-bottom: 50px;
  }
 
@@ -369,7 +369,7 @@ p {
     text-align: left;
     font-size: 1rem;
     height: 50PX;
-    width: 75%;
+    width: 60%;
   }
 
   .sidebar ul li button:hover {
@@ -439,7 +439,7 @@ p {
     position: relative;
     gap: 125px;
     margin-bottom: 40px;
-    padding-left: 35px;
+    padding-left: 110px;
   }
 
   .skills2  {
@@ -447,6 +447,7 @@ p {
     position: relative;
     gap: 100px;
     margin-bottom: 40px;
+    padding-left: 80px;
   }
 
   .skills3  {
@@ -454,7 +455,7 @@ p {
     position: relative;
     gap: 125px;
     margin-bottom: 40px;
-    padding-left: 12px;
+    padding-left: -20px;
   }
   
   .skill {
