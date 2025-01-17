@@ -331,7 +331,7 @@ p {
     max-width: 100%;
     margin: 0px 367px;
     border-radius: 10px;
-
+    position: relative;
   }
 
  .wph1 h1 {
@@ -439,7 +439,7 @@ p {
     position: relative;
     gap: 125px;
     margin-bottom: 40px;
-    padding-left: 110px;
+    padding-left: 90px;
   }
 
   .skills2  {
