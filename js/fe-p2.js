@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>Links</h3>
           <ul class="project-links">
             <li><a href="https://github.com/Prakash-kanikella/Portfolio" target="_blank">Source Code (GitHub)</a></li>
-            <li><a href="#" target="_blank">Website (Link to be updated)</a></li>
+            <li><a href="https://prakashkanikella.vercel.app/" target="_blank">Website</a></li>
           </ul>
 
           <h3>Contact Me</h3>
