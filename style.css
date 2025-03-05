@@ -11,6 +11,7 @@ body {
     color: #000000;
     text-decoration: none;
     overflow-x: hidden;
+    width: auto;
   }
 
   h1, h2, h3, h4, h5, h6 {
