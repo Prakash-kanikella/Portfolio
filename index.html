@@ -3,443 +3,970 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrakashKanikella</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Add Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <!-- Add Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    
-
+    <title>Prakash Kanikella | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+        .slide-right {
+            animation: slideRight 0.6s ease-out;
+        }
+        .slide-left {
+            animation: slideLeft 0.6s ease-out;
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideRight {
+            from { 
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes slideLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #0ea5e9;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .active:after {
+            width: 100%;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #0ea5e9;
+        }
+        .contact-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+        }
+    </style>
 </head>
-<body>
-
-
-<!-- Nav bar-->
-<div class="navbar">
-<ul>
-    <li class="linkcont">
-        <a href="#home#">HOME</a>
-        <a href="#intro#">INTRO</a>
-        <a href="#services#">SERVICES</a>
-        <a href="#portfolio#">PORTFOLIO</a>
-        <a href="#clubroles#">CULB ROLES</a>
-        <a href="#contact#">CONTACT</a>
-    </li>
-</ul>
-<li class="resume">
-    <a href="media\Prakash Kanikella (1).pdf">RESUME</a>
-</li>
-</div>
-
-
-<!-- Right Sidebar -->
-<div class="sticky-right">
-    <a href="https://www.instagram.com/prakash_kanikella/" target="_blank" class="icon instagram">
-      <i class="fab fa-instagram"></i> <!-- Instagram -->
-    </a>
-    <a href="https://github.com/Prakash-kanikella" target="_blank" class="icon github">
-      <i class="fab fa-github"></i> <!-- GitHub -->
-    </a>
-    <a href="https://www.linkedin.com/in/prakash-kanikella" target="_blank" class="icon linkedin">
-      <i class="fab fa-linkedin"></i> <!-- LinkedIn -->
-    </a>
-    <div class="vertical-line"></div>
-</div>
-
-
-<!-- Left Sidebar -->
-<div class="sticky-left">
-    <span><a href="mailto:prakashkanikella7@gmail.com" class="bt">Prakashkanikella7@gmail.com</a></span>
-    <div class="horizontal-line1"></div>
-</div>
-  
-<!-- Home -->
-<div id="home#" class="home">
-    <div class="content-wrapper">
-        <div class="hd1">
-            <h2>
-                PRAKASH KANIKELLA
-            </h2>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-sky-600">Prakash Kanikella</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-sky-600 active">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-sky-600">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-sky-600">Experience</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-sky-600">Skills</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-sky-600">Services</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-sky-600">Projects</a>
+<a href="#club-roles" class="nav-link text-gray-700 hover:text-sky-600">Club Roles</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-sky-600">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-sky-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/prakash_kanikella/" target="_blank" class="icon instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://github.com/Prakash-kanikella" target="_blank" class="icon github">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/prakash-kanikellaa" target="_blank" class="icon linkedin">
-                <i class="fab fa-linkedin"></i>
-            </a>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="nav-link text-gray-700 hover:text-sky-600 active">Home</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-sky-600">About</a>
+                <a href="#experience" class="nav-link text-gray-700 hover:text-sky-600">Experience</a>
+                <a href="#skills" class="nav-link text-gray-700 hover:text-sky-600">Skills</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-sky-600">Services</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-sky-600">Projects</a>
+<a href="#club-roles" class="nav-link text-gray-700 hover:text-sky-600">Club Roles</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-sky-600">Contact</a>
+            </div>
         </div>
-        
-        <div class="dynamic-container">
-            <span id="static-text">I am a</span>
-            <span id="dynamictext"></span>
-          </div>
+    </nav>
 
-          
-        <div class="hd2">
-            <h4>
-                Hi! I'm a chemical engineering student at NIT Calicut with expertise in Python, data science, and <br>
-                 front-end development. I've gained hands-on experience through internships and industrial training, and <br>
-                 I enjoy leading projects and mentoring teams. Always excited to share knowledge and learn!
-            </h4>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden fade-in">
+        <div id="vanta-bg" class="absolute inset-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 slide-up" style="animation-delay: 0.2s">Prakash Kanikella</h1>
+                    <h2 class="text-xl md:text-2xl text-sky-600 mb-6 slide-up" style="animation-delay: 0.4s">Data Scientist | Product Manager | Engineer</h2>
+<p class="text-gray-600 mb-8 max-w-lg mx-auto md:mx-0 slide-up" style="animation-delay: 0.6s">
+                        Leveraging data to drive insights and building beautiful interfaces to showcase them. 
+                        Currently enhancing my skills at NIT Calicut with hands-on experience in Python, 
+                        machine learning, and web development.
+                    </p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#contact" class="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 pulse" style="animation-delay: 0.8s">
+                            Let's Connect
+                        </a>
+                <a href="#projects" class="border border-sky-600 text-sky-600 hover:bg-sky-50 px-6 py-3 rounded-lg font-medium transition duration-300 slide-right" style="animation-delay: 1s">
+                    View Projects
+                </a>
+</div>
+                    <div class="flex justify-center md:justify-start space-x-4 mt-8">
+                        <a href="https://github.com/prakashkanikella" class="text-gray-600 hover:text-sky-600" target="_blank">
+                            <i data-feather="github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/prakashkanikella" class="text-gray-600 hover:text-sky-600" target="_blank">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/prakashkanikella" class="text-gray-600 hover:text-sky-600" target="_blank">
+                            <i data-feather="twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block float" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-full h-full border-2 border-sky-400 rounded-lg"></div>
+                        <img src="Media\Hero PNG.webp" alt="Prakash Kanikella" class="relative rounded-lg w-full max-w-md">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="hd3">
-            <ul>
-                <li  class="button1">LET'S CONNECT</li>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center" data-aos="fade-right">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-full h-full border-2 border-sky-400 rounded-full"></div>
+                        <img src="Media\DP4.jpg" alt="Prakash Kanikella" class="relative rounded-full w-64 h-64 object-cover">
+</div>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm a passionate data analyst and Python developer with expertise in transforming complex data into actionable insights. 
+                        My journey at NIT Calicut has equipped me with strong problem-solving skills and technical knowledge across data science, 
+                        machine learning, and web development.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        I specialize in Python programming for data analysis, creating interactive visualizations, and building responsive 
+                        front-end interfaces. My industrial training at Yokohama provided practical experience in applying these skills to 
+                        real-world challenges.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-2">Contact Information:</h4>
+                        <p class="text-gray-600 flex items-center">
+                            <i data-feather="mail" class="mr-2"></i> prakashkanikella7@gmail.com
+                        </p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/prakashkanikella" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center" target="_blank">
+                            <i data-feather="linkedin" class="mr-2"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/prakashkanikella" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded flex items-center" target="_blank">
+                            <i data-feather="github" class="mr-2"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">My Experience</h2>
+            <div class="border-l-2 border-sky-400 ml-8 pl-8 space-y-12">
+                <!-- Experience 1 -->
+                <div class="relative timeline-item" data-aos="fade-up">
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-semibold">Technical Intern</h3>
+                            <span class="text-sky-600 font-medium">June 2024 - July 2024</span>
+                        </div>
+                        <h4 class="text-lg text-gray-700 mb-3">Yokohama Tires</h4>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Contributed to a machine learning initiative to optimize power plant operations, developing a predictive model that increased power efficiency by 10% and cut coal usage by 5%</li>
+                            <li>Engineered features from real-time sensor data and operational logs to accurately model system behavior and improve predictive performance</li>
+                            <li>Designed and deployed interactive Power BI dashboards to track key performance indicators (KPIs), enabling stakeholders to make data-driven decisions for operational adjustments</li>
+                            <li>Collaborated with cross-functional engineering teams to translate business challenges into a data science framework, ensuring the project's alignment with large-scale industrial goals</li>
+                        </ul>
+                    </div>
+                </div>
                 
-            </ul>
-        </div>
-        <div herf="" >
-            <a href="#intro#"  class="icon-down">
-                ﹀
-            </a>
-        </div>
-    </div>
+                <!-- Experience 2 -->
+                <div class="relative timeline-item" data-aos="fade-up">
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-semibold">Industrial Learning Experience</h3>
+                            <span class="text-sky-600 font-medium">ONGC Rajahmundry</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Evaluated the operational reliability of centrifugal pumps, applying knowledge of fluid dynamics and maintenance data to recommend a predictive failure-detection strategy</li>
+                            <li>Studied the integration of upstream (drilling) and downstream (refining) units at the Tatipaka mini-refinery, focusing on process optimization and synergy</li>
+                            <li>Observed process automation via the Yokogawa DCS and learned risk assessment through HAZOP reviews, focusing on Blowout Preventer (BOP) safety systems</li>
+                            <li>Authored a technical summary of actionable strategies for production enhancement based on observations of daily operations and process control data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 </div>
+    </section>
 
-
-<!--Intro-->
-<div id="intro#" class="intro">
-    <div class="intro-wrapper1">
-        <div class="id1">
-            <img src="media\1728106735737.jpeg" alt="DP">
-        </div>
-    </div>
-    <div class="intro-wrapper2">
-        <div class="id2">
-            <h4>
-                Hi, I’m Prakash Kanikella.
-            </h4>
-            <h4>
-                I specialize in data analysis and visualization, leveraging Python and related tools to help organizations <br>
-                uncover insights from their datasets.
-            </h4>
-            <h4>
-                Whether it's crafting compelling visual stories or analyzing complex data, I bring a practical and precise <br>
-                 approach to solving problems.
-            </h4>
-            <h4>
-                As a chemical engineering student with hands-on experience from internships and industrial training, <br>
-                 I’ve worked on real-world challenges in both technical and management domains.
-            </h4>
-            <h4>
-                I’m also passionate about mentoring and leading teams to drive impactful projects. Always ready to <br>
-                 contribute
-                and learn!
-            </h4>
-        </div>
-        
-        <div class="id3">
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">My Skills</h2>
             
-                <ul>
-                    <li class="ibutton1"><a href="https://www.linkedin.com/in/prakash-kanikellaa">LinkedIn</a></li>
-                    <li class="ibutton2"><a href="https://twitter.com/your_profile">Twitter</a></li>
-                    <li class="ibutton3"><a href="https://github.com/Prakash-kanikella">GitHub</a></li>
-                </ul>
+            <!-- Languages -->
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="text-xl font-semibold mb-6 text-center">Languages I Speak</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300 hover:scale-105">
+                        <i data-feather="code" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Python</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="code" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">JavaScript</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="code" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">SQL</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="code" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">HTML5</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="code" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">CSS3</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="code" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">R</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Frameworks & Tools -->
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="text-xl font-semibold mb-6 text-center">Frameworks & Tools I Like</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="box" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">React.js</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="box" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">TensorFlow</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="box" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Flask</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="box" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Fast ApI</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="box" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Power BI</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="box" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Tableau</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Libraries & Services -->
+            <div data-aos="fade-up">
+                <h3 class="text-xl font-semibold mb-6 text-center">Libraries & Services I Use</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="layers" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Pandas</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="layers" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">NumPy</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="layers" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Scikit-Learn</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="layers" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">TensorFlow</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="layers" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Matplotlib</p>
+                    </div>
+                    <div class="skill-card bg-gray-50 p-4 rounded-lg text-center transition duration-300">
+                        <i data-feather="layers" class="w-10 h-10 mx-auto text-sky-600 mb-2"></i>
+                        <p class="font-medium">Seaborn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">My Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-sky-600 mb-4">
+                        <i data-feather="database" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Data Analysis</h3>
+                    <p class="text-gray-600 mb-4">
+                        Transform your raw data into meaningful insights with comprehensive analysis, 
+                        statistical modeling, and interactive visualizations that drive decision-making.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Exploratory data analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Statistical modeling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Data visualization</span>
+                        </li>
+                    </ul>
+                </div>
                 
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-sky-600 mb-4">
+                        <i data-feather="cpu" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Machine Learning</h3>
+                    <p class="text-gray-600 mb-4">
+                        Develop predictive models and intelligent systems using cutting-edge machine learning 
+                        algorithms tailored to your specific business needs and data challenges.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Predictive modeling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Natural language processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Computer vision</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-sky-600 mb-4">
+                        <i data-feather="users" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Teaching & Training</h3>
+                    <p class="text-gray-600 mb-4">
+                        Share my knowledge through customized training programs and workshops on Python 
+                        programming, data science, and web development for individuals and teams.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Python programming</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Data science fundamentals</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Web development</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+        <section id="projects" class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4" data-aos="fade-up">PROJECTS</h2>
+<p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto" data-aos="fade-up">
+                A selection of my recent projects showcasing my skills in data analysis, machine learning, and front-end development.
+            </p>
+            <!-- Project Filters -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8" data-aos="fade-up">
+                <button class="px-4 py-2 bg-sky-600 text-white rounded-full transform hover:scale-105 transition duration-300 filter-btn" data-filter="all">SHOW ALL</button>
+                <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transform hover:scale-105 transition duration-300 filter-btn" data-filter="ml">MACHINE LEARNING</button>
+                <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transform hover:scale-105 transition duration-300 filter-btn" data-filter="da">DATA ANALYTICS</button>
+                <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full transform hover:scale-105 transition duration-300 filter-btn" data-filter="eng">ENGINEERING</button>
+            </div>
+<!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 - Power Plant Optimization -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-categories="ml eng">
+                    <img src="http://static.photos/industry/640x360/1" alt="Power Plant Optimization" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">Power Plant Optimization</h3>
+                        <p class="text-gray-300 text-center mb-4">ML model to optimize energy output and reduce coal usage</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">FastAPI</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">ML</span>
+                        </div>
+                        <a href="power-plant-optimization.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 2 - PDF Q&A System -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-aos-delay="100" data-categories="ml">
+                    <img src="http://static.photos/technology/640x360/2" alt="PDF Q&A System" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">PDF Q&A System</h3>
+                        <p class="text-gray-300 text-center mb-4">RAG-based document question answering with LangChain</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">LangChain</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">OpenAI</span>
+                        </div>
+                        <a href="pdf-qa-system.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 3 - Defect Detection -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-aos-delay="200" data-categories="ml">
+                    <img src="http://static.photos/industry/640x360/3" alt="Defect Detection" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">Surface Defect Detection</h3>
+                        <p class="text-gray-300 text-center mb-4">CNN model with 96.5% accuracy for product quality control</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">ResNet50</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Streamlit</span>
+                        </div>
+                        <a href="defect-detection.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 4 - E-commerce Dashboard -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-categories="da">
+                    <img src="http://static.photos/retail/640x360/1" alt="E-commerce Dashboard" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">E-commerce Insights</h3>
+                        <p class="text-gray-300 text-center mb-4">Power BI dashboard analyzing 100K+ delivery orders</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Power BI</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Data Analysis</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Visualization</span>
+                        </div>
+                        <a href="ecommerce-dashboard.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 5 - Customer Persona Generator -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-aos-delay="100" data-categories="ml da">
+                    <img src="http://static.photos/people/640x360/1" alt="Customer Persona Generator" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">Customer Persona Generator</h3>
+                        <p class="text-gray-300 text-center mb-4">Automated clustering and summarization of customer data</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Clustering</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">NLP</span>
+                        </div>
+                        <a href="customer-persona.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 6 - Predictive Maintenance -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-aos-delay="200" data-categories="ml eng">
+                    <img src="http://static.photos/industry/640x360/4" alt="Predictive Maintenance" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">Predictive Maintenance</h3>
+                        <p class="text-gray-300 text-center mb-4">Model for centrifugal pumps reducing downtime by 20%</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">ML</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Engineering</span>
+                        </div>
+                        <a href="predictive-maintenance.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 7 - Gas Hydrates -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-categories="eng">
+                    <img src="http://static.photos/science/640x360/1" alt="Gas Hydrates" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">Gas Hydrate Modeling</h3>
+                        <p class="text-gray-300 text-center mb-4">Thermodynamic ML model with 90%+ accuracy</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">ML</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Engineering</span>
+                        </div>
+                        <a href="gas-hydrates.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 8 - Carbon Footprint -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-aos-delay="100" data-categories="eng">
+                    <img src="http://static.photos/industry/640x360/5" alt="Carbon Footprint" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">Carbon Footprint Reduction</h3>
+                        <p class="text-gray-300 text-center mb-4">Renewable integration model for chemical plants</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Engineering</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Sustainability</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Analysis</span>
+                        </div>
+                        <a href="carbon-footprint.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 9 - Sentiment Analysis -->
+                <div class="relative rounded-lg overflow-hidden group project-card" data-aos="fade-up" data-aos-delay="200" data-categories="ml da">
+                    <img src="http://static.photos/technology/640x360/6" alt="Sentiment Analysis" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-semibold mb-2">Feature Sentiment Analysis</h3>
+                        <p class="text-gray-300 text-center mb-4">Analyzing product reviews for feature strengths/weaknesses</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">NLP</span>
+                            <span class="bg-sky-600 text-white text-xs px-2 py-1 rounded">Analysis</span>
+                        </div>
+                        <a href="sentiment-analysis.html" class="mt-4 text-white border border-white hover:bg-white hover:text-sky-600 px-4 py-2 rounded transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+</div>
             
-        </div>
-    </div>
-
-</div>
-
-
-<!--Work Experience-->
-<div class="container">
-  <div class="wph1"><h1>WHERE I'VE WORKED</h1></div>
-  <div class="sidebar">
-      <ul>
-          <li><button onclick="showContent('yokohama')">Yokohama</button></li>
-          <li><button onclick="showContent('skolar')">Skolar</button></li>
-      </ul>
-  </div>
-  <div class="content" id="content">
-      <div id="yokohama" class="job">
-          <div class="job-title">
-              Industrial Trainee at <a href="https://www.yokohama-india.com/">Yokohama</a>
-          </div>
-          <div class="date">
-              June 01 2024 - June 30 2024
-          </div>
-          <div><a href="media\Yakohama -Industrial Training .jpg" target="_blank" class="view-certificate">View Certificate</a></div>
-          <div class="description">
-              <li>Applied core principles of industrial engineering and workflow management.</li>
-              <li>Gained hands-on experience with industry standards and practical applications.</li>
-              <li>Enhanced problem-solving skills by tackling real-world challenges in a corporate setting.</li>
-          </div>
-      </div>
-      <div id="skolar" class="job" style="display: none;">
-          <div class="job-title">
-              Web Developer Intern at <a href="https://www.skolar.in">Skolar</a>
-          </div>
-          <div class="date">
-              Jan 01 2023 - March 30 2023
-          </div>
-          <div><a href="media\Skolar - Intership Completion Certificate .pdf" target="_blank" class="view-certificate">View Certificate</a></div>
-          <div class="description">
-              <li>Designed and implemented responsive web structures and front-end components using HTML, CSS, and JavaScript for various clients.</li>
-              <li>Collaborated with peers to deliver high-quality projects, ensuring functionality and client satisfaction.</li>
-          </div>
-      </div>
-  </div>
-</div>
-
-
-
-<!--Skills-->
-<div class="skills-container">
-  <div class="skh1"><h1>LANGUAGES I SPEAK</h1></div>
-  <div class="skills1">
-    <div class="skill">
-      <i class="fab fa-python"></i>
-      <span>Python</span>
-    </div>
-    <div class="skill">
-      <i class="fab fa-html5"></i>
-      <span>HTML</span>
-    </div>
-    <div class="skill">
-      <i class="fab fa-css3-alt"></i>
-      <span>CSS</span>
-    </div>
-    <div class="skill">
-      <i class="fas fa-database"></i>
-      <span>SQL</span>
-    </div>
-    <div class="skill">
-      <i class="fab fa-js-square"></i>
-      <span>JavaScript</span>
-    </div>
-  </div>
-
-  <div class="skh2"><h1>FRAMEWORKS AND TOOLS I LIKE</h1></div>
-  <div class="skills2">
-    <div class="skill">
-      <i class="fas fa-chart-pie"></i>
-      <span>Power BI</span>
-    </div>
-    <div class="skill">
-      <i class="fab fa-react"></i>
-      <span>React.js</span>
-    </div>
-    <div class="skill">
-      <i class="fas fa-brain"></i>
-      <span>TensorFlow</span>
-    </div>
-    <div class="skill">
-        <i class="fas fa-book"></i>
-        <span>JupyterLab</span>
-    </div>
-    <div class="skill">
-        <i class="fas fa-chart-line"></i>
-        <span>Plotly</span>
-    </div>
-       
-   
-  </div>
-
-  <div class="skh3"><h1>LIBRARIES & SERVICE I USE</h1></div>
-  <div class="skills3">
-    <div class="skill">
-      <i class="fas fa-brain"></i>
-      <span>Scikit-Learn</span>
-    </div>
-    <div class="skill">
-      <i class="fas fa-chart-line"></i>
-      <span>Matplotlib</span>
-    </div>
-    <div class="skill">
-      <i class="fas fa-chart-line"></i>
-      <span>Seaborn</span>
-    </div>
-    <div class="skill">
-      <i class="fas fa-cube"></i>
-      <span>NumPy</span>
-    </div>
-    <div class="skill">
-      <i class="fas fa-table"></i>
-      <span>Pandas</span>
-    </div>
-    <div class="skill">
-      <i class="fab fa-git-alt"></i>
-      <span>Git</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- Services -->
-<div id="services#" class="services">
-
-    <div class="services-wrapper">
-        <div class="sd1">
-            <h1>SERVICES</h1>
-        </div>
-        <div class="sd2">
-            <h4>Let me help make better use of your data. I offer consulting, <br>
-                 training, and speaking engagements.</h4>
-        </div>
-        <div class="sd3">
-            <div class="sd31">
-                <a href="javascript:void(0)"  class="icon-talking">
-                    <i class="fa fa-users services-logo"></i>
-                </a>
-                <h3>Data Analysis</h3>
-                <h4>I love sharing insights on programming <br> and data visualization through engaging,<br>
-                     inspiring talks.</h4> 
-                <a href="" class="sd31-exp" id="openPopup1">
-                    +
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-block bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                    View All Projects
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Club Roles Section -->
+    <section id="club-roles" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Club Roles & Leadership</h2>
             
-            <div class="sd32">
-                <a href="javascript:void(0)"  class="icon-consulting">
-                    <i class="fa fa-cogs services-logo"></i>
-                </a>
-                <h3>Machine Learning</h3>
-                <h4>From interactive graphs to beautiful reports,<br> I help transform your data into <br>
-                     impactful solutions.
-
-                </h4> 
-                <a href="" class="sd32-exp" id="openPopup2">
-                    +
-                </a>
-            </div>
-            <div class="sd33">
-                <a href="javascript:void(0)"  class="icon-teaching">
-                    <i class="fa-solid fa-chalkboard-user"></i>
-                </a>
-                <h3>Teaching & Training</h3>
-                <h4>Whether it’s a talk or a workshop, I’m here to <br> help you master data analytics <br>
-                     and visualization.</h4> 
-                <a href="" class="sd33-exp" id="openPopup3">
-                    +
-                </a>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Role 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-sky-100 p-3 rounded-full mr-4">
+                            <i data-feather="award" class="text-sky-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Technical Head</h3>
+                            <p class="text-gray-600">ISTE Club, NIT Calicut</p>
+                            <p class="text-sm text-gray-500">'23-'24</p>
+                        </div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 pl-16">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Led technical workshops and hackathons for 100+ students</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Organized coding competitions and tech talks with industry experts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Mentored junior students in programming and data science</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Role 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-sky-100 p-3 rounded-full mr-4">
+                            <i data-feather="users" class="text-sky-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Senior Head Program Committee</h3>
+                            <p class="text-gray-600">IEDC Club, NIT Calicut</p>
+                            <p class="text-sm text-gray-500">'23-'24</p>
+                        </div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 pl-16">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Coordinated entrepreneurship development programs and startup events</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Facilitated connections between students and industry mentors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Managed a team of 15 committee members for event execution</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Role 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-sky-100 p-3 rounded-full mr-4">
+                            <i data-feather="star" class="text-sky-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Expo and Marketing Lead</h3>
+                            <p class="text-gray-600">Tatva 23-24, NIT Calicut</p>
+                            <p class="text-sm text-gray-500">'23-'24</p>
+                        </div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 pl-16">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Led marketing campaigns for the technical fest reaching 5000+ students</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Managed exhibition booths and sponsor relationships</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Coordinated with multiple teams for seamless event execution</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Role 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-sky-100 p-3 rounded-full mr-4">
+                            <i data-feather="music" class="text-sky-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Senior Head Program Committee</h3>
+                            <p class="text-gray-600">Ragam 23-24, NIT Calicut</p>
+                            <p class="text-sm text-gray-500">'23-'24</p>
+                        </div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 pl-16">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Organized cultural events with 100+ participants from across India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Coordinated logistics for performances and competitions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Managed a budget of ₹2 lakhs for event expenses</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    
-    </div>
-</div>
+    </section>
 
-
-<!-- Portfolio -->
-<div id="portfolio#" class="portfolio">
-    <div class="portfolio-wrapper">
-      <div class="pd1">
-        <h2>PORTFOLIO</h2>
-      </div>
-      <div class="pd2">
-        <h4>A glimpse of the projects I've been working on</h4>
-      </div>
-      <div class="pd3">
-        <ul>
-          <li class="pbutton" data-filter="all">SHOW ALL</li>
-          <li class="pbutton" data-filter="pdimg1">MACHINE LEARNING</li>
-          <li class="pbutton" data-filter="pdimg2">FRONT END</li>
-          <li class="pbutton" data-filter="pdimg3">DEEP LEARNING</li>
-        </ul>
-      </div>
-      <div class="pd4">
-        <img class="pdimg1" id="11" src="media\Machine learning-1.webp" alt="Machine Learning">
-        <img class="pdimg1" id="12" src="media\machine learninig-2.webp" alt="Machine Learning">
-        <img class="pdimg2" id="21" src="media\Front-end-1.webp" alt="Front End">
-        <img class="pdimg2" id="22" src="media\Front-end-2.webp" alt="Front End">
-        
-      </div>
-    </div>
-</div>
-
-
-<!-- Clubroles -->
- <div id="clubroles#"  >
-    <div class="crh1"><h1>CLUB ROLES</h1></div>
-    <div class="timeline-container">
-        <div class="timeline">
-            <div class="timeline-item left" id="role1">
-                <h3>Technical Head, ISTE Club</h3>
-                <h4>Led the development and maintenance of the club's website using front-end technologies.</h4>
-                <h4>Managed and organized technical events, boosting club engagement and visibility.</p>
-                <h4>Updated and curated technical content, showcasing expertise in digital communication and content management.</p>
-            </div>
-            <div class="timeline-item right" id="role2">
-                <h3>Senior Head, Program Committee, IEDC Club</h3>
-                <h4>Collaborated with cross-functional teams to ensure smooth event execution.</p>
-                <h4>Facilitated brainstorming sessions to generate innovative event ideas.</h4>
-                <h4>Delegated tasks and managed junior team members, ensuring timely project completion.</h4>
-            </div>
-            <div class="timeline-item left" id="role3">
-                <h3>Expo and Marketing committees Lead, Tathva-23,24</h3>
-                <h4>Engaged with technology companies for participation in our annual tech expo.</h4>
-                <h4>Executed marketing strategies to promote the event and attract participants.</h4>
-                <h4>Negotiated partnerships and collaborations to enhance the event's impact.</h4>
-            </div>
-            <div class="timeline-item right" id="role4">
-                <h3>Senior Head, Program Committee, Ragam-23,24</h3>
-                <h4>Spearheaded the program committee for South India's largest cultural festival, Ragam.</h4>
-                <h4>Coordinated event planning, scheduling, and execution, ensuring smooth operations.</h4>
-                <h4>Collaborated with teams to manage over 100+ cultural events and performances.</h4>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4" data-aos="fade-up">CONTACT ME</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto" data-aos="fade-up">
+                Feel free to contact me for any question. For open source projects, please open an issue or pull request on Github. 
+                If you want to follow my work, reach me on Twitter. Otherwise, send me an email at prakashkanikella7@gmail.com.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Email Contact -->
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-right">
+                    <h3 class="text-xl font-semibold mb-6">Get in Touch</h3>
+                    <p class="text-gray-600 mb-6">
+                        For professional inquiries or collaborations, please email me directly at:
+                    </p>
+                    <div class="bg-white p-4 rounded-lg border border-gray-200">
+                        <p class="text-sky-600 font-medium text-center">prakashkanikella7@gmail.com</p>
+                    </div>
+                    <p class="text-gray-600 mt-6">
+                        I typically respond within 24-48 hours.
+                    </p>
+                </div>
+<!-- Contact Info -->
+                <div data-aos="fade-left">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-sky-100 p-3 rounded-full mr-4">
+                                    <i data-feather="mail" class="text-sky-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-gray-600">prakashkanikella7@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-sky-100 p-3 rounded-full mr-4">
+                                    <i data-feather="map-pin" class="text-sky-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p class="text-gray-600">NIT Calicut, Kerala, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Follow Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/prakashkanikella" class="bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-full transform hover:scale-110 transition duration-300" target="_blank">
+                                <i data-feather="github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/prakashkanikella" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transform hover:scale-110 transition duration-300" target="_blank">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="https://twitter.com/prakashkanikella" class="bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full transform hover:scale-110 transition duration-300" target="_blank">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="https://instagram.com/prakashkanikella" class="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full transform hover:scale-110 transition duration-300" target="_blank">
+                                <i data-feather="instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="timeline-line"></div>
-    </div>
-  </div>
+    </section>
 
-
-<!-- Contact -->
-<section id="contact#" class="contact-section">
-    <div class="contact-wrapper">
-        <div class="cd1">
-            <h1 >CONTACT ME</h1>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400">© Copyright Prakash Kanikella 2024. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Use</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white">Contact</a>
+                </div>
+            </div>
         </div>
-   <div class="cd2">
-    <p>Feel free to contact me for any question. For open source projects, please open an issue or pull <br>
-        request on Github. If you want to follow my work, reach me on Twitter. Otherwise, send me an <br>
-        email at prakashkanikella7@gmail.com.</p>
-   </div> 
-</section>
-  
+    </footer>
 
-<!-- Footer -->  
-<footer>
-    <div class="footer">
-        <p>&copy; Copyright © Prakash Kanikella 2024</p>
-    <div class="social-icons">
-        <a href="https://www.instagram.com/prakash_kanikella/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://github.com/Prakash-kanikella" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href=":/www.linkedin.com/in/prakash-kanihttpskellaa" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-    <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="tel:+919963386095">Contact</a>
-    </div>
-    </div>
-</footer>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
 
+        // Initialize Feather Icons
+        feather.replace();
 
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
 
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
 
+        // Vanta.js background animation
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x0ea5e9,
+            backgroundColor: 0xf8fafc,
+            points: 10.00,
+            maxDistance: 20.00,
+            spacing: 15.00
+        });
 
-<!-- Script Tags -->
-<script src="js/pbutton.js"></script>
-<script src="js/openpopup1.js"></script>
-<script src="js/openpopup2.js"></script>
-<script src="js/openpopup3.js"></script>
-<script src="js/pbutton.js"></script>
-<script src="js/dynamictext.js"></script>
-<script src="js/stckyelements.js"></script>
-<script src="js/ml-p1.js"></script>
-<script src="js/ml-p2.js"></script>
-<script src="js/fe-p1.js"></script>
-<script src="js/fe-p2.js"></script>
-<script src="js/timeline.js"></script>
-<script src="js/work.js"></script>
-<script src="script.js" defer></script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Project Filtering Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-sky-600', 'text-white');
+                        btn.classList.add('bg-gray-100', 'hover:bg-gray-200');
+                    });
+                    this.classList.add('bg-sky-600', 'text-white');
+                    this.classList.remove('bg-gray-100', 'hover:bg-gray-200');
+
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        const categories = card.getAttribute('data-categories').split(' ');
+                        
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Initialize with all projects showing
+            filterButtons[0].click();
+        });
+</script>
 </body>
 </html>
