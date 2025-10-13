@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Feature-Based Sentiment Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+        }
+        .subsection-title {
+            @apply text-2xl font-semibold text-gray-700 mb-4 mt-6;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300;
+        }
+        .list-item {
+            @apply flex items-start text-gray-600;
+        }
+        .list-icon {
+            @apply w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0;
+        }
+        .tag {
+             @apply inline-block bg-sky-100 text-sky-800 text-sm font-medium px-3 py-1 rounded-full;
+        }
+        code {
+            @apply bg-gray-200 text-gray-800 font-mono text-sm px-2 py-1 rounded;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-sky-600">Project Details</h1>
+            <a href="index.html" class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-lg font-medium transition duration-300 flex items-center">
+                <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Project Title -->
+        <section class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-3">Feature-Based Sentiment Analysis</h2>
+            <p class="text-xl text-sky-600">Analyzing Competitor Product Reviews with NLP</p>
+            <div class="mt-8 flex justify-center" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://github.com/Prakash-kanikella/Feature-Based-Sentiment-Analysis-of-Competitor-Product-Reviews" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center text-lg shadow-lg transform hover:scale-105">
+                    <i data-feather="github" class="w-6 h-6 mr-3"></i>
+                    View on GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section id="overview" class="mb-16">
+             <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="card" data-aos="fade-right">
+                    <h3 class="subsection-title">What is Feature-Based Sentiment Analysis?</h3>
+                    <p class="text-gray-600 mb-4">
+                        Also known as Aspect-Based Sentiment Analysis, this is an advanced NLP technique that goes beyond simple positive/negative ratings. It pinpoints specific **features** or **aspects** of a product that customers are discussing and determines the sentiment for each one individually.
+                    </p>
+                    <p class="text-gray-600">
+                        This allows product, marketing, and strategy teams to get granular insights into what customers love, hate, or feel indifferent about.
+                    </p>
+                </div>
+                 <div class="card" data-aos="fade-left">
+                    <h3 class="subsection-title">How Does It Help?</h3>
+                     <ul class="space-y-3">
+                        <li class="list-item"><i data-feather="zap" class="list-icon"></i><span>Define MVP features and build a data-driven product roadmap.</span></li>
+                        <li class="list-item"><i data-feather="bar-chart-2" class="list-icon"></i><span>Build a competitive matrix and understand market positioning.</span></li>
+                        <li class="list-item"><i data-feather="trending-up" class="list-icon"></i><span>Gauge customer response to new feature releases or marketing campaigns.</span></li>
+                        <li class="list-item"><i data-feather="search" class="list-icon"></i><span>Identify new market entry opportunities by analyzing unmet needs.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About This Project -->
+        <section class="mb-16 card" data-aos="fade-up">
+            <h3 class="section-title">Project Implementation</h3>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <p class="text-gray-600 mb-4">
+                        This project analyzes <strong>3,150 customer reviews of Amazon Alexa products</strong> from a modified Kaggle dataset. The goal is to automatically extract key topics, analyze sentiment for each, and generate a comprehensive Excel report.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        The core of the project is the <code>absa.py</code> script, which processes the raw review data and outputs a multi-sheet Excel file (<code>Alexa.xlsx</code>) with detailed insights, topic keywords, and individual review scores.
+                    </p>
+                     <p class="text-gray-600">
+                        While this demo uses Alexa reviews, the tool is designed to be versatile and can be adapted for any text-based feedback, such as app store reviews, social media posts, or NPS survey responses.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://i.imgur.com/8aIs7R0.png" alt="Sentiment Analysis Excel Report Output" class="rounded-lg shadow-lg w-full border">
+                    <p class="text-center text-sm text-gray-500 mt-2">The final Excel output, showing sentiment breakdown per feature.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Run -->
+        <section id="how-to-run" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">How to Run the Analysis</h3>
+            <div class="max-w-3xl mx-auto">
+                 <div class="card mb-4" data-aos="fade-up">
+                    <h4 class="font-semibold text-lg mb-2 flex items-center"><span class="text-sky-600 font-bold text-xl mr-3">1.</span> Setup Your Project</h4>
+                    <p class="text-gray-600">Place the <code>absa.py</code>, <code>stop_words_list.py</code>, <code>requirements.txt</code>, and your <code>reviews.csv</code> file in a project folder. It's highly recommended to create a Python virtual environment to avoid dependency conflicts.</p>
+                 </div>
+                 <div class="card mb-4" data-aos="fade-up">
+                    <h4 class="font-semibold text-lg mb-2 flex items-center"><span class="text-sky-600 font-bold text-xl mr-3">2.</span> Install Libraries</h4>
+                    <p class="text-gray-600">From your terminal, run the following command to install all necessary libraries like NLTK and Scikit-learn:</p>
+                    <pre class="bg-gray-800 text-white rounded-md p-3 mt-2 overflow-x-auto"><code>pip install -r requirements.txt</code></pre>
+                 </div>
+                 <div class="card mb-4" data-aos="fade-up">
+                    <h4 class="font-semibold text-lg mb-2 flex items-center"><span class="text-sky-600 font-bold text-xl mr-3">3.</span> Configure the Script</h4>
+                    <p class="text-gray-600">Open <code>absa.py</code> and modify the four settings at the top to match your dataset: <code>app_name</code>, <code>aspects_no</code>, <code>reviews_name_col</code>, and <code>language_of_reviews</code>.</p>
+                 </div>
+                <div class="card" data-aos="fade-up">
+                    <h4 class="font-semibold text-lg mb-2 flex items-center"><span class="text-sky-600 font-bold text-xl mr-3">4.</span> Run & Get Insights</h4>
+                    <p class="text-gray-600">Execute the script from your terminal:</p>
+                    <pre class="bg-gray-800 text-white rounded-md p-3 mt-2 overflow-x-auto"><code>python absa.py</code></pre>
+                    <p class="text-gray-600 mt-2">An Excel file will be generated in your folder. Use pivot tables and filters to explore the sentiment breakdown for each product feature.</p>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+         <section class="text-center" data-aos="fade-up">
+            <h3 class="section-title">Tools & Technologies</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="tag">Python</span>
+                <span class="tag">NLTK</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">VADER Sentiment</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Latent Dirichlet Allocation (LDA)</span>
+                <span class="tag">XlsxWriter</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© Copyright Prakash Kanikella 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>

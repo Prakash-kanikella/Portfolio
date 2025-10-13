@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Power Plant Optimization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+        }
+        .subsection-title {
+            @apply text-2xl font-semibold text-gray-700 mb-4 mt-6;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300;
+        }
+        .list-item {
+            @apply flex items-start text-gray-600;
+        }
+        .list-icon {
+            @apply w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-sky-600">Project Details</h1>
+            <a href="index.html" class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-lg font-medium transition duration-300 flex items-center">
+                <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Project Title -->
+        <section class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-3">Power Plant Optimization</h2>
+            <p class="text-xl text-sky-600">A Data-Driven Approach to Enhancing Fuel Efficiency</p>
+             <div class="mt-8 flex justify-center" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://github.com/Prakash-kanikella/Process-Optimization-Using-Data-Driven-Models.git" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center text-lg shadow-lg transform hover:scale-105">
+                    <i data-feather="github" class="w-6 h-6 mr-3"></i>
+                    View on GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Summary -->
+        <section id="summary" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">Project Summary</h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="card" data-aos="fade-right">
+                    <h4 class="subsection-title">Overview</h4>
+                    <p class="text-gray-600 mb-4">
+                        Coal-fired power plants are central to electricity generation but grapple with fuel inefficiency, high emissions, and the limitations of manual control. This project harnesses the vast amount of data from SCADA systems to optimize plant operations using machine learning.
+                    </p>
+                    <h4 class="subsection-title">The Problem</h4>
+                    <p class="text-gray-600">
+                        Manual, heuristic-based operations result in significant inefficiencies, including high coal consumption, suboptimal power output, challenges in meeting emission regulations, and the underutilization of valuable SCADA data.
+                    </p>
+                </div>
+                <div class="card" data-aos="fade-left">
+                    <h4 class="subsection-title">Objectives</h4>
+                     <ul class="space-y-3">
+                        <li class="list-item">
+                            <i data-feather="check-circle" class="list-icon"></i>
+                            <span>Build a data-driven framework to clean, analyze, and model plant operations.</span>
+                        </li>
+                        <li class="list-item">
+                            <i data-feather="check-circle" class="list-icon"></i>
+                            <span>Predict power output accurately using Random Forest and XGBoost models.</span>
+                        </li>
+                        <li class="list-item">
+                            <i data-feather="check-circle" class="list-icon"></i>
+                            <span>Identify and optimize key operational parameters to improve fuel efficiency and reduce emissions.</span>
+                        </li>
+                         <li class="list-item">
+                            <i data-feather="check-circle" class="list-icon"></i>
+                            <span>Provide actionable, SCADA-integrated recommendations for operators.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How a Power Plant Works -->
+        <section id="how-it-works" class="mb-16 card" data-aos="fade-up">
+            <h3 class="section-title">How a Coal-Fired Power Plant Works</h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://i.imgur.com/8m5Y3o2.png" alt="Coal Power Plant Schematic" class="rounded-lg shadow-md w-full">
+                    <p class="text-center text-sm text-gray-500 mt-2">Fig 1: Schematic of a typical coal-fired power plant.</p>
+                </div>
+                <div data-aos="fade-left">
+                    <p class="text-gray-600 mb-4">A power plant is a facility that converts a primary energy source, like coal, into electrical energy. The process in a coal-fired plant involves several key stages:</p>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-600">
+                        <li><b>Combustion:</b> Pulverized coal is burned in a furnace, generating immense heat.</li>
+                        <li><b>Steam Generation:</b> This heat is used in boilers to convert water into high-pressure steam.</li>
+                        <li><b>Turbine Rotation:</b> The high-pressure steam is directed to spin the blades of a turbine.</li>
+                        <li><b>Power Generation:</b> The turbine is connected to a generator, which converts the mechanical rotation into electricity.</li>
+                        <li><b>Condensation:</b> The steam is then cooled back into water and recycled, completing the circuit.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data & Methodology -->
+        <section id="data-methodology" class="mb-16">
+             <h3 class="section-title" data-aos="fade-up">Data and Methodology</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card" data-aos="fade-right">
+                    <h4 class="subsection-title">About the Data</h4>
+                    <p class="text-gray-600 mb-4">The dataset consists of over 110 parameters from the plant's operational logs. The primary goal was to predict the `GENERATOR MW` (the power output) based on a wide range of input variables.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="list-item"><i data-feather="zap" class="list-icon"></i><b>Output Variable:</b> GENERATOR MW</li>
+                        <li class="list-item"><i data-feather="thermometer" class="list-icon"></i><b>Fuel & Combustion:</b> TOTAL COAL FLOW, Damper Positions</li>
+                        <li class="list-item"><i data-feather="wind" class="list-icon"></i><b>Airflow:</b> TOTAL AIR FLOW, Furnace Draft Pressure</li>
+                        <li class="list-item"><i data-feather="trending-up" class="list-icon"></i><b>Steam Cycle:</b> Main Steam Line Temp, Water Flow</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="fade-left">
+                    <h4 class="subsection-title">Methodology</h4>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-600">
+                        <li><b>Data Collection:</b> Gathered historical SCADA data.</li>
+                        <li><b>Preprocessing:</b> Cleaned data, handled outliers, and scaled features.</li>
+                        <li><b>Feature Engineering:</b> Created new, insightful features like air-to-fuel ratios and temperature differentials.</li>
+                        <li><b>Model Training:</b> Trained and tuned Machine Learning models to predict power output.</li>
+                        <li><b>Optimization:</b> Used the trained model with an optimization algorithm (Optuna) to find the best operating parameters.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Models and Results -->
+        <section id="results" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">Modeling and Performance</h3>
+             <div class="grid md:grid-cols-3 gap-8">
+                <div class="card" data-aos="fade-up">
+                    <h4 class="subsection-title flex items-center"><i data-feather="bar-chart-2" class="mr-2 text-sky-600"></i>Feature Importance</h4>
+                    <p class="text-gray-600 mb-4">The XGBoost model allowed us to identify the most influential factors. `TOTAL COAL FLOW` and `TOTAL AIR FLOW` were, as expected, highly significant.</p>
+                     <img src="https://i.imgur.com/u1n2sVg.png" alt="Feature Importance Plot" class="rounded-lg shadow-md w-full">
+                     <p class="text-center text-sm text-gray-500 mt-2">Fig 2: Top 10 most important features.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                     <h4 class="subsection-title flex items-center"><i data-feather="git-merge" class="mr-2 text-sky-600"></i>Models Used</h4>
+                    <p class="text-gray-600 mb-4">Two primary models were evaluated for this regression task. The XGBoost model provided superior performance after extensive hyperparameter tuning.</p>
+                     <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="font-semibold">1. Random Forest Regressor</p>
+                        <p class="text-sm text-gray-500">A strong baseline model.</p>
+                    </div>
+                    <div class="bg-sky-50 p-4 rounded-lg mt-4 border border-sky-200">
+                        <p class="font-semibold text-sky-800">2. XGBoost Regressor (Final Model)</p>
+                        <p class="text-sm text-sky-700">Demonstrated higher accuracy and better captured the system's non-linearities.</p>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                     <h4 class="subsection-title flex items-center"><i data-feather="award" class="mr-2 text-sky-600"></i>Performance Metrics</h4>
+                    <p class="text-gray-600 mb-4">The tuned XGBoost model achieved a high R-squared value, indicating it explains nearly 88% of the variance in power output.</p>
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="p-2">Model</th>
+                                <th class="p-2">R-squared</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-2">Random Forest</td>
+                                <td class="p-2 font-mono">0.8212</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 font-semibold text-sky-700">Tuned XGBoost</td>
+                                <td class="p-2 font-semibold text-sky-700 font-mono">0.8797</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optimization Results -->
+        <section class="mb-16 card" data-aos="fade-up">
+            <h3 class="section-title">Optimization Results</h3>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
+                The core of the project was to use our accurate model to find a "sweet spot" of operational settings. The optimization algorithm successfully identified a set of parameters predicted to significantly boost efficiency.
+            </p>
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-max text-center">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="p-3 font-semibold text-gray-700">Parameter</th>
+                            <th class="p-3 font-semibold text-gray-700">Typical Operation (Baseline)</th>
+                            <th class="p-3 font-semibold text-gray-700">Optimized Operation (Predicted)</th>
+                            <th class="p-3 font-semibold text-sky-700">Improvement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="p-3 font-medium">Generator MW</td>
+                            <td class="p-3 font-mono">~635 MW</td>
+                            <td class="p-3 font-mono">695.47 MW</td>
+                            <td class="p-3 font-mono font-bold text-green-600">+9.5%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Total Coal Flow</td>
+                            <td class="p-3 font-mono">~346.5 t/h</td>
+                            <td class="p-3 font-mono">325.60 t/h</td>
+                            <td class="p-3 font-mono font-bold text-green-600">-6.0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Deployment & Conclusion -->
+        <section class="text-center" data-aos="fade-up">
+            <h3 class="section-title">Deployment & Conclusion</h3>
+            <p class="text-gray-600 max-w-3xl mx-auto mb-6">
+                The final model was packaged into a production-ready API using FastAPI. This allows the optimization logic to be seamlessly integrated into the plant's internal dashboards and real-time analytics pipelines, providing operators with data-driven recommendations.
+            </p>
+            <p class="text-gray-800 font-semibold max-w-3xl mx-auto">
+                This project successfully demonstrates that significant efficiency gains are possible not by pushing individual inputs to their limits, but by finding a more harmonious and efficient balance between them, discovered through machine learning.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© Copyright Prakash Kanikella 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
+

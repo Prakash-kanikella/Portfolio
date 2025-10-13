@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | E-Commerce Insights Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+        }
+        .subsection-title {
+            @apply text-2xl font-semibold text-gray-700 mb-4 mt-6;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300;
+        }
+        .list-item {
+            @apply flex items-start text-gray-600;
+        }
+        .list-icon {
+            @apply w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0;
+        }
+        .tag {
+             @apply inline-block bg-sky-100 text-sky-800 text-sm font-medium px-3 py-1 rounded-full;
+        }
+        .stat-card {
+            @apply bg-gray-50 p-6 rounded-lg text-center border border-gray-200;
+        }
+        .stat-value {
+            @apply text-3xl font-bold text-sky-600 mb-1;
+        }
+        .stat-label {
+            @apply text-gray-600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-sky-600">Project Details</h1>
+            <a href="index.html" class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-lg font-medium transition duration-300 flex items-center">
+                <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Project Title -->
+        <section class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-3">E-Commerce Insights Report</h2>
+            <p class="text-xl text-sky-600">Analyzing the Quick-Commerce Landscape with Power BI</p>
+            <div class="mt-8 flex justify-center" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://github.com/Prakash-kanikella/E-commerce-Sales-Analytics-Dashboard-using-Power-BI" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center text-lg shadow-lg transform hover:scale-105">
+                    <i data-feather="github" class="w-6 h-6 mr-3"></i>
+                    View on GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Key Metrics Section -->
+        <section id="metrics" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">Overall Performance At a Glance</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="stat-card" data-aos="fade-up">
+                    <h4 class="stat-value">₹59M</h4>
+                    <p class="stat-label">Total Order Value</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="50">
+                    <h4 class="stat-value">100k</h4>
+                    <p class="stat-label">Total Orders</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="stat-value">9%</h4>
+                    <p class="stat-label">Repeat Customers</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="150">
+                    <h4 class="stat-value">29.5m</h4>
+                    <p class="stat-label">Avg. Delivery Time</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="stat-value">3.24 ★</h4>
+                    <p class="stat-label">Avg. Service Rating</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Showcase -->
+        <section id="dashboard" class="mb-16 card" data-aos="fade-up">
+            <h3 class="section-title">Power BI Dashboard</h3>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
+                An interactive dashboard was created in Power BI to visualize the key findings from the 100,000-row dataset. It provides a comprehensive overview of sales, customer behavior, and delivery performance.
+            </p>
+            <div class="bg-gray-100 p-4 rounded-lg">
+                 <img src="https://i.imgur.com/3j3y5uW.png" alt="E-commerce Delivery Insights Dashboard" class="rounded-lg shadow-2xl w-full border-4 border-white">
+            </div>
+        </section>
+
+        <!-- Detailed Insights -->
+        <section id="detailed-insights" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">Detailed Analysis & Key Findings</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Platform Distribution & Product Performance -->
+                <div class="card" data-aos="fade-right">
+                    <h4 class="subsection-title">Market & Product Landscape</h4>
+                    <div class="mb-6">
+                        <h5 class="font-semibold text-lg mb-2 flex items-center"><i data-feather="server" class="list-icon"></i>Platform Distribution</h5>
+                        <p class="text-gray-600">Swiggy Instamart, Blinkit, and Jiomart each contribute approximately <strong>33%</strong> to total order volumes, indicating a highly competitive market with no single dominant player.</p>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold text-lg mb-2 flex items-center"><i data-feather="package" class="list-icon"></i>Product Category Performance</h5>
+                        <p class="text-gray-600">Top categories (Dairy, Grocery, Snacks, Fruits & Veg) show a balanced demand, each accounting for around <strong>16.5%–16.8%</strong> of total orders. This suggests customers use these platforms for a wide variety of daily needs.</p>
+                    </div>
+                </div>
+
+                <!-- Customer Ratings & Peak Trends -->
+                <div class="card" data-aos="fade-left">
+                    <h4 class="subsection-title">Customer Behavior & Trends</h4>
+                    <div class="mb-6">
+                        <h5 class="font-semibold text-lg mb-2 flex items-center"><i data-feather="star" class="list-icon"></i>Customer Ratings & Service</h5>
+                        <p class="text-gray-600">A majority of customers provide a <strong>5-star rating</strong>, with fewer ratings in the 1-4 range. This suggests a polarized experience: customers are either very satisfied or left dissatisfied, with little middle ground.</p>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold text-lg mb-2 flex items-center"><i data-feather="clock" class="list-icon"></i>Peak Order Trends</h5>
+                        <p class="text-gray-600">
+                            <strong>Peak Days:</strong> Tuesday, Monday, and Sunday see the highest order volumes.
+                            <br>
+                            <strong>Peak Hours:</strong> Demand spikes in the early morning (2-6 AM) and again in the late evening.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack & Conclusion -->
+        <section class="mb-16 text-center" data-aos="fade-up">
+            <h3 class="section-title">Tech Stack</h3>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <span class="tag">Power BI</span>
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Matplotlib</span>
+                <span class="tag">Seaborn</span>
+            </div>
+
+            <h3 class="section-title">Conclusion & Impact</h3>
+             <p class="text-gray-600 max-w-3xl mx-auto">
+                This report provides a granular breakdown of trends, customer behavior, and platform performance in the competitive Indian quick-commerce space. The insights generated are actionable and can be used to directly improve marketing strategies, optimize delivery operations, and enhance overall customer satisfaction across all platforms.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© Copyright Prakash Kanikella 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
+

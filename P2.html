@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Customer Persona Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+        }
+        .subsection-title {
+            @apply text-2xl font-semibold text-gray-700 mb-4 mt-6;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300;
+        }
+        .list-item {
+            @apply flex items-start text-gray-600;
+        }
+        .list-icon {
+            @apply w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0;
+        }
+        .tag {
+             @apply inline-block bg-sky-100 text-sky-800 text-sm font-medium px-3 py-1 rounded-full;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-sky-600">Project Details</h1>
+            <a href="index.html" class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-lg font-medium transition duration-300 flex items-center">
+                <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Project Title -->
+        <section class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-3">Customer Persona Generator</h2>
+            <p class="text-xl text-sky-600">Automating Market Insights with Clustering and NLP</p>
+            <div class="mt-8 flex justify-center" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://github.com/Prakash-kanikella/Customer-Persona-Generator-using-Clustering-and-Auto-Summarization" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center text-lg shadow-lg transform hover:scale-105">
+                    <i data-feather="github" class="w-6 h-6 mr-3"></i>
+                    View on GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Introduction -->
+        <section id="introduction" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">Introduction</h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="card" data-aos="fade-right">
+                    <h4 class="subsection-title">The Challenge</h4>
+                    <p class="text-gray-600 mb-4">
+                        Manually creating customer personas is a time-consuming process for marketing, sales, and product teams. This project aimed to automate this process by leveraging unsupervised machine learning to group customers and then generate rich, descriptive personas for each segment.
+                    </p>
+                    <h4 class="subsection-title">The Solution</h4>
+                    <p class="text-gray-600">
+                        A tool that applies clustering and text summarization to generate data-driven customer personas automatically. This system reduces manual effort by up to 80%, providing teams with quick, actionable insights into their customer base.
+                    </p>
+                </div>
+                 <div class="flex justify-center" data-aos="fade-left">
+                    <img src="https://i.imgur.com/K1oH5Iu.png" alt="Project Objectives and Workflow" class="rounded-lg shadow-lg w-full max-w-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Data & Preprocessing -->
+        <section id="data-preprocessing" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">Data & Preprocessing</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card" data-aos="fade-right">
+                    <h4 class="subsection-title">Data Source</h4>
+                    <p class="text-gray-600 mb-4">
+                        The project utilized the <a href="https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis" class="text-sky-600 hover:underline" target="_blank">Customer Segmentation dataset from Kaggle</a>. It contains rich data on grocery store customers, including:
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="list-item"><i data-feather="user" class="list-icon"></i><b>Demographics:</b> Age, marital status, education, income.</li>
+                        <li class="list-item"><i data-feather="home" class="list-icon"></i><b>Household:</b> Number of children and teens.</li>
+                        <li class="list-item"><i data-feather="shopping-cart" class="list-icon"></i><b>Spending:</b> Amount spent across 7 product categories.</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="fade-left">
+                    <h4 class="subsection-title">Feature Engineering</h4>
+                    <p class="text-gray-600 mb-4">
+                        To prepare the data for modeling, several new, more insightful features were created:
+                    </p>
+                     <ul class="space-y-2">
+                        <li class="list-item"><i data-feather="award" class="list-icon"></i><b>edu_level:</b> Simplified education into numeric categories.</li>
+                        <li class="list-item"><i data-feather="users" class="list-icon"></i><b>num_family_member:</b> Calculated total household size.</li>
+                        <li class="list-item"><i data-feather="dollar-sign" class="list-icon"></i><b>total_spent:</b> Aggregated spending across all categories.</li>
+                         <li class="list-item"><i data-feather="pie-chart" class="list-icon"></i><b>Product Spend Ratios:</b> Calculated the percentage of total spend for each product category.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modeling & Segmentation -->
+        <section id="modeling" class="mb-16 card" data-aos="fade-up">
+            <h3 class="section-title">Modeling – Customer Segmentation</h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div data-aos="fade-right">
+                    <p class="text-gray-600 mb-4">
+                        The core of the segmentation was achieved using the <strong>KMeans clustering</strong> algorithm.
+                    </p>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-600">
+                        <li>
+                            <b>Scaling:</b> All numerical features were standardized using `StandardScaler` to ensure fair comparison.
+                        </li>
+                        <li>
+                            <b>Dimensionality Reduction:</b> Principal Component Analysis (PCA) was applied to reduce the number of features while retaining most of the data's variance, making clustering more effective.
+                        </li>
+                        <li>
+                            <b>Finding Optimal Clusters:</b> Using the "Elbow Method" with Inertia and evaluating the Silhouette Score, an optimal number of <strong>k = 4</strong> clusters was determined.
+                        </li>
+                        <li>
+                            <b>Segmentation:</b> Customers were grouped into four distinct segments: Cluster A, B, C, and D.
+                        </li>
+                    </ol>
+                </div>
+                <div data-aos="fade-left" class="flex flex-col items-center">
+                     <img src="https://placehold.co/600x400/e0f2fe/1f2937?text=Customer+Clusters+(PCA)" alt="Customer Segments Visualization" class="rounded-lg shadow-md w-full">
+                     <p class="text-center text-sm text-gray-500 mt-2">Fig 3: Visualization of the four customer clusters after PCA.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Persona Generator -->
+        <section id="persona-generator" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">The Persona Generator</h3>
+             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                The final output is an interactive tool built with Streamlit. It takes the insights from the four customer clusters and dynamically generates detailed, fictional personas that represent the real-world characteristics of each segment.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="card" data-aos="fade-right">
+                    <h4 class="subsection-title">Key Components</h4>
+                     <ul class="space-y-3">
+                        <li class="list-item"><i data-feather="user-plus" class="list-icon"></i><b>Name & Gender:</b> Randomly assigned from real-world census data.</li>
+                        <li class="list-item"><i data-feather="image" class="list-icon"></i><b>Avatar:</b> Uniquely generated using the `python-avatars` library.</li>
+                        <li class="list-item"><i data-feather="info" class="list-icon"></i><b>Profile Details:</b> Age, income, household size, and spending levels are generated based on the statistical profile (25th-75th percentile) of their cluster.</li>
+                        <li class="list-item"><i data-feather="star" class="list-icon"></i><b>Product Preferences:</b> Highlights the product categories each persona is most likely to spend on compared to the average customer.</li>
+                    </ul>
+                </div>
+                 <div data-aos="fade-left" class="flex flex-col items-center">
+                    <img src="https://placehold.co/800x600/ffffff/374151?text=Streamlit+App+UI+Placeholder" alt="Streamlit App Interface" class="rounded-lg shadow-lg border">
+                    <p class="text-center text-sm text-gray-500 mt-2">Fig 4: Dummy interface of the deployed Streamlit application.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Used -->
+        <section class="text-center" data-aos="fade-up">
+            <h3 class="section-title">Tools & Technologies</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">KMeans Clustering</span>
+                <span class="tag">PCA</span>
+                <span class="tag">python-avatars</span>
+                <span class="tag">Excalidraw</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© Copyright Prakash Kanikella 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>

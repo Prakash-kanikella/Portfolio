@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Predictive Maintenance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+        }
+        .subsection-title {
+            @apply text-2xl font-semibold text-gray-700 mb-4 mt-6;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300;
+        }
+        .list-item {
+            @apply flex items-start text-gray-600;
+        }
+        .list-icon {
+            @apply w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0;
+        }
+        .tag {
+             @apply inline-block bg-sky-100 text-sky-800 text-sm font-medium px-3 py-1 rounded-full;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-sky-600">Project Details</h1>
+            <a href="index.html" class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-lg font-medium transition duration-300 flex items-center">
+                <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Project Title -->
+        <section class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-3">Predictive Maintenance for Chemical Plant Equipment</h2>
+            <p class="text-xl text-sky-600">Using Machine Learning to Predict Failures and Minimize Downtime</p>
+            <div class="mt-8 flex justify-center" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://github.com/Prakash-kanikella/Predictive-Maintenance-for-Chemical-Plant-Equipment" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center text-lg shadow-lg transform hover:scale-105">
+                    <i data-feather="github" class="w-6 h-6 mr-3"></i>
+                    View on GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section id="overview" class="mb-16 card" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="subsection-title">Project Goal</h3>
+                    <p class="text-gray-600 mb-4">
+                        This project focuses on developing a predictive maintenance system for centrifugal pumps in the chemical industry. By leveraging machine learning and real-time sensor data, the system predicts potential equipment failures before they happen.
+                    </p>
+                    <p class="text-gray-600">
+                        The primary objectives are to optimize maintenance schedules, significantly reduce costly unplanned downtime, and enhance operational safety and efficiency.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                     <img src="https://i.imgur.com/pB1aB5A.png" alt="Predictive Maintenance System Diagram" class="rounded-lg shadow-md w-full">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Data & Features -->
+        <section id="data" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">Dataset & Key Parameters</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card" data-aos="fade-up">
+                    <h4 class="font-semibold text-lg mb-2 flex items-center"><i data-feather="thermometer" class="list-icon"></i>Temperatures</h4>
+                    <p class="text-gray-600"><strong>Air Temperature [K]</strong> and <strong>Process Temperature [K]</strong> are monitored to detect overheating or operational deviations.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-semibold text-lg mb-2 flex items-center"><i data-feather="refresh-cw" class="list-icon"></i>Mechanical Stress</h4>
+                    <p class="text-gray-600"><strong>Rotational Speed [rpm]</strong> and <strong>Torque [Nm]</strong> provide insights into the mechanical strain on the pump and motor.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="font-semibold text-lg mb-2 flex items-center"><i data-feather="tool" class="list-icon"></i>Component Wear</h4>
+                    <p class="text-gray-600"><strong>Tool Wear [min]</strong> tracks the cumulative operational time, a key indicator for wear-and-tear related failures.</p>
+                </div>
+            </div>
+             <div class="mt-8 text-center card bg-sky-50 border-sky-200 border" data-aos="fade-up">
+                <h4 class="font-semibold text-lg mb-2">Failure Types Analyzed</h4>
+                <p class="text-gray-700">The model is trained to predict not just if a failure will occur, but also the type of failure, including: <strong>Power Failure, Tool Wear Failure, Overstrain Failure,</strong> and <strong>Heat Dissipation Failure.</strong></p>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="workflow" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">System Workflow</h3>
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Timeline Line -->
+                <div class="absolute left-3 top-0 h-full w-0.5 bg-sky-200"></div>
+                <!-- Step 1 -->
+                <div class="relative pl-12 pb-8" data-aos="fade-up">
+                    <div class="absolute left-0 top-1 w-6 h-6 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                    <h4 class="font-semibold text-lg mb-1">Real-Time Data Collection</h4>
+                    <p class="text-gray-600">Live sensor data (temperature, torque, speed) is continuously collected from the pump.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative pl-12 pb-8" data-aos="fade-up">
+                    <div class="absolute left-0 top-1 w-6 h-6 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                    <h4 class="font-semibold text-lg mb-1">Model Prediction</h4>
+                    <p class="text-gray-600">The machine learning model processes this data in real-time to predict the probability of failure.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative pl-12 pb-8" data-aos="fade-up">
+                    <div class="absolute left-0 top-1 w-6 h-6 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                    <h4 class="font-semibold text-lg mb-1">Anomaly Detection</h4>
+                    <p class="text-gray-600">The system compares predictions against a healthy baseline. Any deviation triggers a warning.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative pl-12" data-aos="fade-up">
+                    <div class="absolute left-0 top-1 w-6 h-6 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold">4</div>
+                    <h4 class="font-semibold text-lg mb-1">Actionable Alerts</h4>
+                    <p class="text-gray-600">If a potential failure is detected, an alert is sent to the maintenance team, detailing the potential issue (e.g., "Warning: Torque spike indicates a potential blockage").</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tech Stack -->
+         <section class="text-center" data-aos="fade-up">
+            <h3 class="section-title">Tech Stack</h3>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Matplotlib</span>
+                <span class="tag">Seaborn</span>
+            </div>
+            
+            <h3 class="section-title">Impact & Conclusion</h3>
+             <p class="text-gray-600 max-w-3xl mx-auto">
+               This project demonstrates a practical application of machine learning to solve a critical industrial problem. By shifting from a reactive ("fix it when it breaks") to a proactive maintenance strategy, chemical plants can significantly improve equipment reliability, increase operational uptime, and enhance workplace safety.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© Copyright Prakash Kanikella 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
