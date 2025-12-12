@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details | Power Plant Optimization</title>
+    <title>Project Details | Power Plant Optimization & EIA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -18,22 +18,27 @@
             @apply text-3xl font-bold text-gray-800 mb-8 text-center;
         }
         .subsection-title {
-            @apply text-2xl font-semibold text-gray-700 mb-4 mt-6;
+            @apply text-xl font-bold text-gray-700 mb-4 mt-2 border-b-2 border-sky-100 pb-2 inline-block;
         }
         .card {
-            @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300;
+            @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
         }
         .list-item {
-            @apply flex items-start text-gray-600;
+            @apply flex items-start text-gray-600 mb-2;
         }
         .list-icon {
             @apply w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0;
+        }
+        .stat-value {
+            @apply text-2xl font-bold text-sky-700;
+        }
+        .stat-label {
+            @apply text-xs text-gray-500 uppercase tracking-wide;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header Section -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold text-sky-600">Project Details</h1>
@@ -44,13 +49,11 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <!-- Project Title -->
         <section class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-3">Power Plant Optimization</h2>
-            <p class="text-xl text-sky-600">A Data-Driven Approach to Enhancing Fuel Efficiency</p>
+            <p class="text-xl text-sky-600">Data-Driven Efficiency & Environmental Impact Assessment</p>
              <div class="mt-8 flex justify-center" data-aos="fade-up" data-aos-delay="100">
                 <a href="https://github.com/Prakash-kanikella/Process-Optimization-Using-Data-Driven-Models.git" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center text-lg shadow-lg transform hover:scale-105">
                     <i data-feather="github" class="w-6 h-6 mr-3"></i>
@@ -59,18 +62,17 @@
             </div>
         </section>
 
-        <!-- Project Summary -->
         <section id="summary" class="mb-16">
             <h3 class="section-title" data-aos="fade-up">Project Summary</h3>
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="card" data-aos="fade-right">
                     <h4 class="subsection-title">Overview</h4>
                     <p class="text-gray-600 mb-4">
-                        Coal-fired power plants are central to electricity generation but grapple with fuel inefficiency, high emissions, and the limitations of manual control. This project harnesses the vast amount of data from SCADA systems to optimize plant operations using machine learning.
+                        Coal-fired power plants are central to electricity generation but grapple with fuel inefficiency, high emissions, and the limitations of manual control. This project harnesses SCADA data to optimize operations using machine learning, while simultaneously analyzing the Environmental Impact (EIA) of such facilities.
                     </p>
                     <h4 class="subsection-title">The Problem</h4>
                     <p class="text-gray-600">
-                        Manual, heuristic-based operations result in significant inefficiencies, including high coal consumption, suboptimal power output, challenges in meeting emission regulations, and the underutilization of valuable SCADA data.
+                        Manual, heuristic-based operations result in significant inefficiencies, high coal consumption, and challenges in meeting emission regulations (SO2, NOx, PM).
                     </p>
                 </div>
                 <div class="card" data-aos="fade-left">
@@ -78,26 +80,25 @@
                      <ul class="space-y-3">
                         <li class="list-item">
                             <i data-feather="check-circle" class="list-icon"></i>
-                            <span>Build a data-driven framework to clean, analyze, and model plant operations.</span>
+                            <span>Build a data-driven framework to model plant operations.</span>
                         </li>
                         <li class="list-item">
                             <i data-feather="check-circle" class="list-icon"></i>
-                            <span>Predict power output accurately using Random Forest and XGBoost models.</span>
+                            <span>Perform a comprehensive Environmental Impact Assessment (EIA).</span>
                         </li>
                         <li class="list-item">
                             <i data-feather="check-circle" class="list-icon"></i>
-                            <span>Identify and optimize key operational parameters to improve fuel efficiency and reduce emissions.</span>
+                            <span>Optimize operational parameters to improve fuel efficiency.</span>
                         </li>
                          <li class="list-item">
                             <i data-feather="check-circle" class="list-icon"></i>
-                            <span>Provide actionable, SCADA-integrated recommendations for operators.</span>
+                            <span>Provide actionable recommendations to reduce pollution load.</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- How a Power Plant Works -->
         <section id="how-it-works" class="mb-16 card" data-aos="fade-up">
             <h3 class="section-title">How a Coal-Fired Power Plant Works</h3>
             <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -106,19 +107,175 @@
                     <p class="text-center text-sm text-gray-500 mt-2">Fig 1: Schematic of a typical coal-fired power plant.</p>
                 </div>
                 <div data-aos="fade-left">
-                    <p class="text-gray-600 mb-4">A power plant is a facility that converts a primary energy source, like coal, into electrical energy. The process in a coal-fired plant involves several key stages:</p>
-                    <ol class="list-decimal list-inside space-y-2 text-gray-600">
-                        <li><b>Combustion:</b> Pulverized coal is burned in a furnace, generating immense heat.</li>
-                        <li><b>Steam Generation:</b> This heat is used in boilers to convert water into high-pressure steam.</li>
-                        <li><b>Turbine Rotation:</b> The high-pressure steam is directed to spin the blades of a turbine.</li>
-                        <li><b>Power Generation:</b> The turbine is connected to a generator, which converts the mechanical rotation into electricity.</li>
-                        <li><b>Condensation:</b> The steam is then cooled back into water and recycled, completing the circuit.</li>
+                    <p class="text-gray-600 mb-4">A thermal power station uses a <b>Rankine Cycle</b>. Water is heated to steam, which spins a turbine to drive a generator.</p>
+                    <h5 class="font-bold text-gray-700 mb-2">Key Process Steps:</h5>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-600 text-sm">
+                        <li><b>Combustion:</b> Pulverized coal burns in the furnace.</li>
+                        <li><b>Steam Generation:</b> Heat converts water in the boiler drum to high-pressure steam.</li>
+                        <li><b>Turbine Rotation:</b> Steam spins the HP, IP, and LP turbines.</li>
+                        <li><b>Power Generation:</b> The turbine drives the Turbo Generator.</li>
+                        <li><b>Emissions Control:</b> Electrostatic Precipitators (ESP) extract fly ash.</li>
+                        <li><b>Cooling:</b> Steam is condensed and recycled; heat is released via Cooling Towers.</li>
                     </ol>
                 </div>
             </div>
         </section>
 
-        <!-- Data & Methodology -->
+        <section id="eia-report" class="mb-16">
+            <h3 class="section-title" data-aos="fade-up">Environmental Impact Assessment (EIA)</h3>
+            <p class="text-center text-gray-600 max-w-4xl mx-auto mb-10">
+                A critical analysis of the pollution load and environmental challenges associated with thermal power generation. This assessment identifies key areas where optimization can reduce ecological footprints.
+            </p>
+
+            <div class="card mb-8" data-aos="fade-up">
+                <h4 class="subsection-title">Plant Machinery & Functions</h4>
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div>
+                        <h5 class="font-bold text-gray-800 mb-2 flex items-center"><i data-feather="truck" class="w-4 h-4 mr-2"></i>Coal Handling</h5>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><span class="font-semibold text-sky-700">Wagon Tippler:</span> Tips coal from wagons to conveyor belts (12 wagons/hr).</li>
+                            <li><span class="font-semibold text-sky-700">Crusher:</span> Breaks coal into smaller chunks.</li>
+                            <li><span class="font-semibold text-sky-700">Coal Mills:</span> Grinds coal into pulverized powder for efficient burning.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-800 mb-2 flex items-center"><i data-feather="activity" class="w-4 h-4 mr-2"></i>Core Operations</h5>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><span class="font-semibold text-sky-700">Furnace & Boiler:</span> Where combustion occurs and water turns to steam.</li>
+                            <li><span class="font-semibold text-sky-700">Turbine & Generator:</span> Converts mechanical energy into electricity.</li>
+                            <li><span class="font-semibold text-sky-700">Condenser:</span> Converts steam back to water, removing non-condensable gases.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-800 mb-2 flex items-center"><i data-feather="cloud-drizzle" class="w-4 h-4 mr-2"></i>Environmental Control</h5>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><span class="font-semibold text-sky-700">ESP (Electrostatic Precipitator):</span> 
+
+[Image of Electrostatic Precipitator]
+ Uses electrodes to attract and extract fly ash from flue gases.</li>
+                            <li><span class="font-semibold text-sky-700">Cooling Tower:</span> 
+
+[Image of Cooling Tower working principle]
+ Cools water by evaporation (~143.5m height).</li>
+                            <li><span class="font-semibold text-sky-700">Chimney:</span> Releases treated flue gases at high altitude.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-red-500" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center mb-2 text-red-600 font-bold"><i data-feather="cloud" class="mr-2"></i> Air Pollution</div>
+                    <p class="text-xs text-gray-600">High Particulate Matter (PM) from inferior coal. Emissions of SO2, NOx, and CO2 (Greenhouse gas).</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-2 text-blue-600 font-bold"><i data-feather="droplet" class="mr-2"></i> Water Pollution</div>
+                    <p class="text-xs text-gray-600">Effluents from ash ponds, condenser cooling towers, DM plant, and boiler blowdown.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-yellow-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-2 text-yellow-600 font-bold"><i data-feather="volume-2" class="mr-2"></i> Noise Pollution</div>
+                    <p class="text-xs text-gray-600">High decibel levels from high-pressure steam release, fans, turbines, and motors.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-green-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-2 text-green-600 font-bold"><i data-feather="map" class="mr-2"></i> Land Degradation</div>
+                    <p class="text-xs text-gray-600">~100 million tonnes of fly ash generated annually. Disposal occupies vast agricultural/forest land.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="card" data-aos="fade-right">
+                    <h4 class="subsection-title">Daily Pollution Load (Estimates)</h4>
+                    <p class="text-sm text-gray-500 mb-4">Based on CPCB 2012 Data for Coal Based Plants</p>
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="p-3">Pollutant</th>
+                                <th class="p-3 text-right">Emissions (Tonnes/Day)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b"><td class="p-3 font-medium">CO2</td><td class="p-3 text-right font-mono">424,650</td></tr>
+                            <tr class="border-b"><td class="p-3 font-medium">NOx</td><td class="p-3 text-right font-mono">4,966</td></tr>
+                            <tr class="border-b"><td class="p-3 font-medium">Particulate Matter (PM)</td><td class="p-3 text-right font-mono">4,374</td></tr>
+                            <tr><td class="p-3 font-medium">SO2</td><td class="p-3 text-right font-mono">3,311</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card" data-aos="fade-left">
+                    <h4 class="subsection-title">Compliance Status (India)</h4>
+                    <div class="space-y-4 mt-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Air Pollution Compliance</span>
+                                <span class="font-bold text-red-500">35 / 81 Plants Compliant</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-red-500 h-2.5 rounded-full" style="width: 43%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Ash Pond / Water Compliance</span>
+                                <span class="font-bold text-orange-500">29 / 81 Plants Compliant</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-orange-500 h-2.5 rounded-full" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">*Based on sample data from CPCB Report 2012</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-sky-50 rounded-lg p-8 border border-sky-100" data-aos="fade-up">
+                <h4 class="section-title text-2xl mb-6">Why Do Plants Fail Environmental Standards?</h4>
+                <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 text-sm text-gray-700">
+                    <div class="flex items-start">
+                        <div class="bg-white p-2 rounded-full shadow-sm mr-3 text-red-500 font-bold">1</div>
+                        <div>
+                            <span class="font-bold block text-gray-900">Inconsistent Coal Supply</span>
+                            Fluctuating coal quality impacts boiler combustion efficiency and increases PM load.
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-white p-2 rounded-full shadow-sm mr-3 text-red-500 font-bold">2</div>
+                        <div>
+                            <span class="font-bold block text-gray-900">High Coal Resistivity</span>
+                            High ash resistivity prevents dust from sticking to ESP plates, causing re-entrainment into the air.
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-white p-2 rounded-full shadow-sm mr-3 text-red-500 font-bold">3</div>
+                        <div>
+                            <span class="font-bold block text-gray-900">Inefficient ESP Operation</span>
+                            Poor maintenance, incorrect voltage, or improper rapping cycles reduce ash removal efficiency.
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-white p-2 rounded-full shadow-sm mr-3 text-red-500 font-bold">4</div>
+                        <div>
+                            <span class="font-bold block text-gray-900">Low Specific Collection Area (SCA)</span>
+                            Inadequate surface area in older ESP designs for the volume of gas flow handled.
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-white p-2 rounded-full shadow-sm mr-3 text-red-500 font-bold">5</div>
+                        <div>
+                            <span class="font-bold block text-gray-900">Ash Pond Mismanagement</span>
+                             Wind-blown ash creates fugitive dust; leaks contaminate groundwater.
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-white p-2 rounded-full shadow-sm mr-3 text-red-500 font-bold">6</div>
+                        <div>
+                            <span class="font-bold block text-gray-900">High Ash Content</span>
+                            Indian coal contains 30-45% ash, overloading handling systems and requiring massive disposal land.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="data-methodology" class="mb-16">
              <h3 class="section-title" data-aos="fade-up">Data and Methodology</h3>
             <div class="grid md:grid-cols-2 gap-8">
@@ -145,7 +302,6 @@
             </div>
         </section>
 
-        <!-- Models and Results -->
         <section id="results" class="mb-16">
             <h3 class="section-title" data-aos="fade-up">Modeling and Performance</h3>
              <div class="grid md:grid-cols-3 gap-8">
@@ -192,7 +348,6 @@
             </div>
         </section>
 
-        <!-- Optimization Results -->
         <section class="mb-16 card" data-aos="fade-up">
             <h3 class="section-title">Optimization Results</h3>
             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
@@ -226,7 +381,6 @@
             </div>
         </section>
 
-        <!-- Deployment & Conclusion -->
         <section class="text-center" data-aos="fade-up">
             <h3 class="section-title">Deployment & Conclusion</h3>
             <p class="text-gray-600 max-w-3xl mx-auto mb-6">
@@ -239,7 +393,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-gray-400">© Copyright Prakash Kanikella 2024. All rights reserved.</p>
@@ -256,4 +409,3 @@
     </script>
 </body>
 </html>
-
